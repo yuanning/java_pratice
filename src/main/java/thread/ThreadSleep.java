@@ -20,7 +20,7 @@ public class ThreadSleep implements Runnable {
 
     @Override
     public void run()  {
-        while (!Thread.currentThread().isInterrupted()) {
+        while (true) {
             try {
                 Thread currentThread = Thread.currentThread();
                 Thread.State state = currentThread.getState();
@@ -29,10 +29,13 @@ public class ThreadSleep implements Runnable {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                System.out.println("before="+Thread.currentThread().isInterrupted());
                 Thread.currentThread().interrupt();
+                System.out.println("after="+Thread.currentThread().isInterrupted());
+                return;
             }
         }
-//        while (true) {
+//        while (!Thread.currentThread().isInterrupted()) {
 //            try {
 //                Thread currentThread = Thread.currentThread();
 //                Thread.State state = currentThread.getState();
@@ -41,10 +44,9 @@ public class ThreadSleep implements Runnable {
 //                Thread.sleep(5000);
 //            } catch (InterruptedException e) {
 //                e.printStackTrace();
+//                System.out.println("before="+Thread.currentThread().isInterrupted());
 //                Thread.currentThread().interrupt();
-//                return;
-//            } finally {
-//                System.out.println("finally");
+//                System.out.println("after="+Thread.currentThread().isInterrupted());
 //            }
 //        }
     }
