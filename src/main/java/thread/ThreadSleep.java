@@ -20,21 +20,21 @@ public class ThreadSleep implements Runnable {
 
     @Override
     public void run()  {
-        while (true) {
-            try {
-                Thread currentThread = Thread.currentThread();
-                Thread.State state = currentThread.getState();
-                System.out.println(state.name());
-                System.out.println(currentThread.getName());
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                System.out.println("before="+Thread.currentThread().isInterrupted());
-                Thread.currentThread().interrupt();
-                System.out.println("after="+Thread.currentThread().isInterrupted());
-                return;
-            }
-        }
+//        while (true) {
+//            try {
+//                Thread currentThread = Thread.currentThread();
+//                Thread.State state = currentThread.getState();
+//                System.out.println(state.name());
+//                System.out.println(currentThread.getName());
+//                Thread.sleep(5000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//                System.out.println("before="+Thread.currentThread().isInterrupted());
+//                Thread.currentThread().interrupt();
+//                System.out.println("after="+Thread.currentThread().isInterrupted());
+//                return;
+//            }
+//        }
 //        while (!Thread.currentThread().isInterrupted()) {
 //            try {
 //                Thread currentThread = Thread.currentThread();
@@ -49,6 +49,17 @@ public class ThreadSleep implements Runnable {
 //                System.out.println("after="+Thread.currentThread().isInterrupted());
 //            }
 //        }
+        try {
+            while (true) {
+                Thread currentThread = Thread.currentThread();
+                Thread.State state = currentThread.getState();
+                System.out.println(state.name());
+                System.out.println(currentThread.getName());
+                Thread.sleep(5000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) throws InterruptedException {
