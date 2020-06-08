@@ -18,7 +18,6 @@ package thread;
  */
 public class ThreadSleep implements Runnable {
 
-    @Override
     public void run()  {
 //        while (true) {
 //            try {
