@@ -56,6 +56,17 @@ public class QuickSort {
         return left;
     }
 
+    /**
+     * 分治法 (单边循环法)
+     * @param arr
+     * @param beginIndex
+     * @param endIndex
+     * @return
+     */
+    private static int partitionV2(int[] arr, int beginIndex, int endIndex) {
+        return 0;
+    }
+
     public static void main(String[] args) {
         int[] arr = {4,6,5,4,9,6,1,0,5,7};
         QuickSort.quickSort(arr, 0, arr.length - 1);
