@@ -43,7 +43,7 @@ public class MergeSort {
             if (temp[p1] <= array[p2]) {
                 array[i] = temp[p1];
                 p1++;
-                //如果左侧指针先到达临界位置  说明右侧数组均大于左侧数组值
+                //如果左侧指针先到达临界位置  说明右侧数组当前指针指向的值 均大于左侧数组值
                 if (p1 == tempSize) {
                     break;
                 }
