@@ -13,12 +13,14 @@ public class MergeSort {
     }
 
     public void mergeSort(int[] array, int start, int end) {
-        if (start >= end)
+        if (start == end)
             return;
         int mid = (start + end) / 2;
+        //输出当前递归的结果 start mid end的值
         mergeSort(array, start, mid);
         mergeSort(array, mid+1, end);
 //        merge(array, start, mid, end);
+        System.out.println("start:"+start+":mid:"+mid+":end:"+end);
         mergeNew(array, start, mid, end);
     }
 
